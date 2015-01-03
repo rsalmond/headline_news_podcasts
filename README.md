@@ -18,7 +18,7 @@ lame        http://lame.sourceforge.net/
 git clone https://github.com/rsalmond/headline_news_podcasts.git
 cd headline_news_podcasts
 sudo pip install -r requirements.txt
-sudo apt-get install mp3wrap libav-tools
+sudo apt-get install mp3wrap libav-tools lame
 ```
 
 # Usage:
