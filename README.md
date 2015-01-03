@@ -8,9 +8,9 @@ into a single file for easy consumption.
 
 # Requirements:
 
-mp3wrap     http://mp3wrap.sourceforge.net/
-libav-tools https://libav.org/
-lame        http://lame.sourceforge.net/
+  * mp3wrap     http://mp3wrap.sourceforge.net/
+  * libav-tools https://libav.org/
+  * lame        http://lame.sourceforge.net/
 
 # Setup
 
