@@ -12,7 +12,7 @@ into a single file for easy consumption.
   * libav-tools https://libav.org/
   * lame        http://lame.sourceforge.net/
 
-# Setup
+## Setup
 
 ```
 git clone https://github.com/rsalmond/headline_news_podcasts.git
@@ -21,7 +21,7 @@ sudo pip install -r requirements.txt
 sudo apt-get install mp3wrap libav-tools lame
 ```
 
-# Usage:
+## Usage:
 
 ```
 $ bash get.sh     
@@ -33,8 +33,9 @@ $ ls final.mp3 -alh
 -rw-r--r-- 1 user users 12M Jan  3 18:33 final.mp3
 ```
 
-# Todo:
+## Todo:
 
   * use a real tempdir for workfiles
-  * --help
+  * --help / docopts
   * config file for podcast sources
+  * have a quiet mode and default to that
