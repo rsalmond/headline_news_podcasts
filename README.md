@@ -6,8 +6,9 @@ The files are then converted to a common bitrate and samplerate (64kbps / 44.1kh
 into a single file for easy consumption.
 
 
-# Requirements:
+## Requirements:
 
+  * python
   * mp3wrap     http://mp3wrap.sourceforge.net/
   * libav-tools https://libav.org/
   * lame        http://lame.sourceforge.net/
@@ -35,7 +36,5 @@ $ ls final.mp3 -alh
 
 ## Todo:
 
-  * use a real tempdir for workfiles
-  * --help / docopts
   * config file for podcast sources
   * have a quiet mode and default to that
