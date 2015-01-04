@@ -12,13 +12,11 @@ do
     fi
 done
 
-exit 0
+cwd=`pwd`
 
-# prep work dir 
 workdir=`mktemp -d`
 mkdir $workdir/out
 
-# get dem podcasts
 echo "Downloading podcasts ..."
 python grabber.py --dest=$workdir
 
@@ -30,9 +28,12 @@ for f in *.mp3; do avconv -i $f -b 64k -ar 44100 -c:a pcm_s16le ./out/$f.wav; do
 cd out
 for f in *.wav; do lame $f $f.mp3; done
 
-# concat
+# concatenate normalized audio files
 cd $workdir
 mp3wrap final.mp3 $workdir/out/*.mp3
 
-# fucking mp3wrap shits on my filenames
-mv ./working/final_MP3WRAP.mp3 ./final.mp3
+# remove mp3wrap name cruft
+mv $workdir/final_MP3WRAP.mp3 $cwd/final.mp3
+
+# tidy up
+rm $workdir -rf
