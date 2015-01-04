@@ -29,17 +29,17 @@ def dload(download_dir, url, status=True):
                 f.write(chunk)
                 f.flush()
 
-def get_latest(feed):
+def get_latest(download_dir, feed):
     feed = feedparser.parse(feed)
     if len(feed['items']) > 0:
         if 'links' in feed['items'][0]:
             for link in feed['items'][0]['links']:
                 if 'type' in link  and 'href' in link:
                     if 'audio' in link['type']:
-                        dload(link['href'])
+                        dload(download_dir, link['href'])
                         return
 
-    print 'Err: no media found'
+    print 'ERR: no media found'
 
 if __name__ == '__main__':
 
