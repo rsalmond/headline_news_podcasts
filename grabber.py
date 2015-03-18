@@ -20,6 +20,8 @@ def dload(download_dir, url, status=True):
     """ I use this code snippet so often i should submit a pr to requests """
     tmp = url.split('/')
     filename = tmp[len(tmp) - 1]
+    if not filename.endswith('.mp3'):
+        filename = "%s.mp3" % (filename)
     if status:
         print 'Downloading {0} to {1}/{2} ...'.format(url, download_dir, filename)
     response = requests.get(url, stream=True)
